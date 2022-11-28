@@ -1,10 +1,10 @@
 import os
-# from pymongo import MongoClient
+from pymongo import MongoClient
 from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
-# client = MongoClient("mongodb://dice:<password>@ac-873sgcf-shard-00-00.dspgaoc.mongodb.net:27017,ac-873sgcf-shard-00-01.dspgaoc.mongodb.net:27017,ac-873sgcf-shard-00-02.dspgaoc.mongodb.net:27017/?ssl=true&replicaSet=atlas-jb0heg-shard-0&authSource=admin&retryWrites=true&w=majority")
-# db = client.list_number_2
+client = MongoClient("mongodb://dice:<password>@ac-873sgcf-shard-00-00.dspgaoc.mongodb.net:27017,ac-873sgcf-shard-00-01.dspgaoc.mongodb.net:27017,ac-873sgcf-shard-00-02.dspgaoc.mongodb.net:27017/?ssl=true&replicaSet=atlas-jb0heg-shard-0&authSource=admin&retryWrites=true&w=majority")
+db = client.list_number_2
 
 # HTML 화면 보여주기
 @app.route('/')
